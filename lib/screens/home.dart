@@ -10,10 +10,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final data = ["1", "2"];
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Home"),
+      child: GridView.builder(
+        padding: const EdgeInsets.symmetric(
+          vertical: 30,
+        ),
+        itemCount: data.length,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 30,
+          crossAxisSpacing: 30,
+        ),
+        itemBuilder: (BuildContext context, int index) {
+          return Text("card");
+        },
+      ),
     );
   }
 }

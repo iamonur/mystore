@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class CustomTheme {
   static const Color grey = Colors.grey;
   static const Color yellow = Colors.yellow;
+  static const cardShadow = [
+    BoxShadow(color: grey, blurRadius: 5, spreadRadius: 4, offset: Offset(0, 2))
+  ];
 
   static ThemeData getTheme() {
     Map<String, double> fontSize = {
@@ -12,6 +15,23 @@ class CustomTheme {
     };
 
     return ThemeData(
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        toolbarHeight: 70,
+        centerTitle: true,
+        titleTextStyle: TextStyle(
+          color: Colors.black,
+          fontFamily: 'Merriweather',
+          fontSize: fontSize['lg'],
+          fontWeight: FontWeight.bold,
+          letterSpacing: 4,
+        ),
+      ),
+      tabBarTheme: const TabBarTheme(
+        labelColor: yellow,
+        unselectedLabelColor: Colors.black,
+      ),
       primaryColor: yellow,
       fontFamily: 'Merriweather',
       textTheme: TextTheme(

@@ -3,6 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:mystore/firebase_options.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:mystore/screens/checkout.dart';
+import 'package:mystore/screens/profile.dart';
+import 'package:mystore/screens/home.dart';
 import 'dart:convert';
 
 import 'package:mystore/utils/custom_theme.dart';
@@ -29,7 +32,46 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: CustomTheme.getTheme(),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            title: const Text("Shop App"),
+          ),
+          bottomNavigationBar: Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+              boxShadow: CustomTheme.cardShadow,
+            ),
+            child: const TabBar(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                indicatorColor: Colors.transparent,
+                tabs: [
+                  Tab(
+                    icon: Icon(Icons.home),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.person),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.shopping_basket),
+                  ),
+                ]),
+          ),
+          body: TabBarView(
+            children: [
+              const HomeScreen(),
+              const ProfileScreen(),
+              const CheckoutScreen(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
