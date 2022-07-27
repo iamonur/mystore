@@ -10,6 +10,14 @@ class CustomTheme {
     BoxShadow(color: grey, blurRadius: 3, spreadRadius: 4, offset: Offset(1, 3))
   ];
 
+  static getCardDecoration() {
+    return BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(30),
+      boxShadow: cardShadow,
+    );
+  }
+
   static ThemeData getTheme() {
     Map<String, double> fontSize = {
       "sm": 14,

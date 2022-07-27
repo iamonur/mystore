@@ -16,11 +16,7 @@ class GridCard extends StatelessWidget {
       margin: index % 2 == 0
           ? const EdgeInsets.only(left: 22)
           : const EdgeInsets.only(right: 22),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(30),
-        boxShadow: CustomTheme.cardShadow,
-      ),
+      decoration: CustomTheme.getCardDecoration(),
       child: GestureDetector(
         onTap: onPress,
         child: ClipRRect(
@@ -32,7 +28,7 @@ class GridCard extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: CachedNetworkImage(
-                    imageUrl: "https://picsum.photos/200",
+                    imageUrl: "https://picsum.photos/200/500",
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -56,7 +52,7 @@ class GridCard extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
