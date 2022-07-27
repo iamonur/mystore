@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mystore/components/loader.dart';
 import 'package:mystore/utils/custom_theme.dart';
 
 class CustomButton extends StatelessWidget {
@@ -26,7 +27,7 @@ class CustomButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: loading ? null : onPress,
         child: loading
-            ? const Text("loading")
+            ? const Loader()
             : Text(
                 text,
                 style: Theme.of(context).textTheme.titleSmall,
