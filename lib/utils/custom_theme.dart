@@ -6,6 +6,9 @@ class CustomTheme {
   static const cardShadow = [
     BoxShadow(color: grey, blurRadius: 5, spreadRadius: 4, offset: Offset(0, 2))
   ];
+  static const buttonShadow = [
+    BoxShadow(color: grey, blurRadius: 3, spreadRadius: 4, offset: Offset(1, 3))
+  ];
 
   static ThemeData getTheme() {
     Map<String, double> fontSize = {

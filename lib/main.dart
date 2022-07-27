@@ -63,11 +63,11 @@ class MyApp extends StatelessWidget {
                   ),
                 ]),
           ),
-          body: TabBarView(
+          body: const TabBarView(
             children: [
-              const HomeScreen(),
-              const ProfileScreen(),
-              const CheckoutScreen(),
+              HomeScreen(),
+              ProfileScreen(),
+              CheckoutScreen(),
             ],
           ),
         ),
